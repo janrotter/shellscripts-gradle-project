@@ -1,0 +1,5 @@
+.idea
+shellscripts-gradle-project.iml
+*~
+.*
+build

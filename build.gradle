@@ -1,0 +1,18 @@
+apply plugin: 'groovy'
+
+version = '1.0'
+
+repositories {
+  mavenCentral()
+}
+
+test {
+  systemProperty 'workspacesDir', project.getBuildDir().absolutePath + '/scriptWorkspaces'
+  systemProperty 'scriptsDir', project.getProjectDir().absolutePath + '/src/main/bash'
+  systemProperty 'fakesDir', project.getProjectDir().absolutePath + '/src/test/fakes'
+}
+
+dependencies {
+  testCompile group: 'junit', name: 'junit', version: '4.11'
+  testCompile 'org.spockframework:spock-core:1.0-groovy-2.3'
+}
